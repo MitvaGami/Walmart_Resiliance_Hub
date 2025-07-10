@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Walmart Resilience Hub</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!-- Mapbox GL JS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <!-- Your Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="app">
+    <div id="map"></div>
+    <div id="sidebar">
+        <div id="header">
+            <img src="../walmart-logo.png" alt="Walmart Logo" width="150"/>
+            <h2>Resilience Hub</h2>
+        </div>
+        <div id="controls">
+    <h3>Event Simulation</h3>
+    <select id="scenario-select">
+        <option value="reroute">Scenario 1: Simple Reroute</option>
+        <option value="resource">Scenario 2: Resource from New DC</option>
+        <option value="split" selected>Scenario 3: Split Shipment</option>
+    </select>
+    <button id="trigger-btn">Trigger Disruption</button>
+</div>
+        <div id="action-log">
+            <h3>System Log</h3>
+            <ul id="log-list">
+                <li>System ready. Monitoring network...</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- This is the hidden Decision Card -->
+<div id="decision-card" class="hidden">
+    <span id="close-card-btn">×</span>
+    <h4 id="decision-title"></h4>
+    <p><strong>Option A:</strong> <span id="decision-option-a"></span></p>
+    <p><strong>Option B:</strong> <span id="decision-option-b"></span></p>
+    <hr>
+    <p id="decision-result"></p>
+</div>
+
+
+<!-- Your Custom JS (at the end of body) -->
+<script src="script.js"></script>
+</body>
+</html>
