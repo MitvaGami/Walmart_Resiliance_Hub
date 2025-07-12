@@ -1,8 +1,6 @@
 # Walmart Risk Radar
 ### A High-Fidelity Prototype for Proactive Supply Chain Resilience
 
-**Built for the Walmart Hackathon**
-
 ---
 
 ## 🚀 The Problem
