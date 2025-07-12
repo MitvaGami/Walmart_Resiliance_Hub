@@ -15,7 +15,9 @@ app.get('/api/initial-state', (req, res) => {
     res.json({
         dcs: db.dcs,
         stores: db.stores,
-        shipments: db.shipments
+        trucks: db.trucks,
+        shipments: db.shipments,
+        riskEvents: db.riskEvents // Ensure this is here
     });
 });
 
@@ -108,18 +110,14 @@ app.post('/api/trigger-disruption', (req, res) => {
     res.json(response);
 });
 
+app.get('/api/risk-feed', (req, res) => {
+    res.json(db.riskEvents);
+});
 
 app.listen(PORT, () => {
     console.log(`Backend server running on http://localhost:${PORT}`);
 });
 
-app.get('/api/risk-feed', (req, res) => {
-    res.json(db.riskEvents);
-});
 
-// The '/api/trigger-disruption' endpoint remains exactly the same.
-// It will be called by the frontend when a risk is clicked.
-app.post('/api/trigger-disruption', (req, res) => {
-    // ... (This entire block of code stays the same) ...
-});
+
 
