@@ -12,12 +12,17 @@ app.use(express.json());
 // --- API Endpoints ---
 
 app.get('/api/initial-state', (req, res) => {
+    // NEW: Sort risk events by their disruption time chronologically
+    const sortedRiskEvents = [...db.riskEvents].sort((a, b) => {
+        return new Date(a.disruption_time) - new Date(b.disruption_time);
+    });
+
     res.json({
         dcs: db.dcs,
         stores: db.stores,
         trucks: db.trucks,
         shipments: db.shipments,
-        riskEvents: db.riskEvents // Ensure this is here
+        riskEvents: sortedRiskEvents // Send the sorted array
     });
 });
 
@@ -117,7 +122,3 @@ app.get('/api/risk-feed', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Backend server running on http://localhost:${PORT}`);
 });
-
-
-
-

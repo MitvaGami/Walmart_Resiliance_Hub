@@ -45,6 +45,7 @@ const riskEvents = [
         source: "Associated Press",
         scenarioId: "split",
         affected_shipment_id: 1001, // Directly links to a shipment
+        disruption_time: "2025-07-12 10:01:00", // NEW: Timestamp for sorting
         latitude: 32.39,            // Specific coordinates of the disruption
         longitude: -82.06
     },
@@ -55,6 +56,7 @@ const riskEvents = [
         source: "Reuters",
         scenarioId: "resource",
         affected_shipment_id: 1003,
+        disruption_time: "2025-07-12 09:30:00", // NEW: Timestamp for sorting
         latitude: 33.74,
         longitude: -81.55
     },
@@ -65,6 +67,7 @@ const riskEvents = [
         source: "The Weather Channel",
         scenarioId: "reroute",
         affected_shipment_id: 1002,
+        disruption_time: "2025-07-12 11:01:00", // NEW: Timestamp for sorting
         latitude: 30.52,
         longitude: -81.65
     }
