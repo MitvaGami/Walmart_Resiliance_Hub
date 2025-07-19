@@ -1,0 +1,64 @@
+{
+  "stores": [
+    {
+      "id": "ST-001",
+      "name": "Walmart Supercenter #542",
+      "location": { "lat": 34.0522, "lng": -118.2437 }
+    },
+    {
+      "id": "ST-002",
+      "name": "Walmart Supercenter #821",
+      "location": { "lat": 36.1699, "lng": -115.1398 }
+    }
+  ],
+  "dcs": [
+    {
+      "id": "DC-001",
+      "name": "Walmart DC #7030",
+      "location": { "lat": 34.1522, "lng": -118.4437 }
+    },
+    {
+      "id": "DC-002",
+      "name": "Walmart DC #6089 (Alternative)",
+      "location": { "lat": 34.0522, "lng": -117.9937 }
+    }
+  ],
+  "shipments": [
+    {
+      "id": "SH-001",
+      "from": "DC-001",
+      "to": "ST-001",
+      "status": "On Time",
+      "cargo": [
+        { "item": "Apples", "priority": "high" },
+        { "item": "Paper Towels", "priority": "low" }
+      ]
+    },
+    {
+      "id": "SH-002",
+      "from": "DC-001",
+      "to": "ST-002",
+      "status": "On Time",
+      "cargo": [
+        { "item": "Electronics", "priority": "low" },
+        { "item": "Apparel", "priority": "low" }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "type": "ACCIDENT",
+      "description": "Major accident on I-10",
+      "location": { "lat": 34.0922, "lng": -118.3437 },
+      "affectedShipment": "SH-001"
+    },
+    {
+      "id": 2,
+      "type": "FLOODING",
+      "description": "Flash flood warning near Baker",
+      "location": { "lat": 35.265, "lng": -116.074 },
+      "affectedShipment": "SH-002"
+    }
+  ]
+}
